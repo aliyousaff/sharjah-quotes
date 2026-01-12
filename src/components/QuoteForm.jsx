@@ -210,15 +210,7 @@ export default function QuoteForm() {
                             {errors.timeline && <p className="text-red-500 text-xs mt-1">{errors.timeline.message}</p>}
                         </div>
 
-                        {/* File Upload (Optional) */}
-                        <div>
-                            <label className="block text-sm font-semibold text-slate-700 mb-1">Upload Reference <span className="text-slate-400 font-normal">(Optional)</span></label>
-                            <input
-                                type="file"
-                                {...register("files")}
-                                className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-sm text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100"
-                            />
-                        </div>
+
 
                         {/* Additional Notes */}
                         <div className="col-span-1 md:col-span-2">
