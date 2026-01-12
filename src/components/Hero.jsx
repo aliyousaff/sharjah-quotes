@@ -60,7 +60,7 @@ export default function Hero() {
                             className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white text-lg px-8 py-4 rounded-lg font-bold transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
                         >
                             <MessageCircle className="w-5 h-5" />
-                            WhatsApp Quote
+                            Chat with Coordinator
                         </button>
                     </div>
 

@@ -53,7 +53,7 @@ export default function QuoteForm() {
                                 className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors"
                             >
                                 <MessageCircle className="w-5 h-5" />
-                                Message us on WhatsApp
+                                Chat with Coordinator
                             </button>
                             <p className="text-xs text-blue-200 mt-2">Mention your name and project type for priority.</p>
                         </div>

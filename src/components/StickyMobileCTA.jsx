@@ -21,7 +21,7 @@ export default function StickyMobileCTA() {
                 className="flex-1 bg-green-600 active:bg-green-700 text-white py-3 rounded-lg font-bold flex items-center justify-center gap-2 shadow-sm"
             >
                 <Phone className="w-5 h-5" />
-                <span>Call / WA</span>
+                <span className="text-sm">Chat with Coordinator</span>
             </a>
             <button
                 onClick={scrollToForm}
