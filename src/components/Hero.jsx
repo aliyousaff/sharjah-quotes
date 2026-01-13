@@ -1,13 +1,14 @@
 import React from 'react';
 import { CheckCircle2, MessageCircle, ArrowRight } from 'lucide-react';
+import { trackEvent } from '../lib/analytics';
 
-export default function Hero() {
+const Hero = () => {
     const scrollToForm = () => {
-        const el = document.getElementById('quote-form');
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('quote-form')?.scrollIntoView({ behavior: 'smooth' });
     };
 
     const openWhatsApp = () => {
+        trackEvent('whatsapp_click', { source: 'hero_cta' });
         window.open('https://wa.me/923217176329?text=Hi,%20I%20need%20a%20quote%20for%20aluminum/glass%20work', '_blank');
     };
 

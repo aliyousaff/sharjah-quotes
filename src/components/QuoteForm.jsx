@@ -1,8 +1,10 @@
+
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Send, CheckCircle2, Loader2, MessageCircle } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { useUTM } from '../hooks/useUTM';
+import { trackEvent } from '../lib/analytics';
 
 export default function QuoteForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -22,6 +24,12 @@ export default function QuoteForm() {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify(submissionData)
+            });
+
+            // Track Conversion
+            trackEvent('form_submit', {
+                project_type: data.projectType,
+                location: data.location
             });
 
             setIsSubmitting(false);
@@ -49,7 +57,10 @@ export default function QuoteForm() {
                         <div className="bg-white/5 rounded-xl p-6 border border-white/10">
                             <p className="font-semibold mb-4 text-white">Want a faster response?</p>
                             <button
-                                onClick={() => window.open('https://wa.me/923217176329', '_blank')}
+                                onClick={() => {
+                                    trackEvent('whatsapp_click', { source: 'success_screen' });
+                                    window.open('https://wa.me/923217176329', '_blank');
+                                }}
                                 className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center gap-2 transition-colors"
                             >
                                 <MessageCircle className="w-5 h-5" />
