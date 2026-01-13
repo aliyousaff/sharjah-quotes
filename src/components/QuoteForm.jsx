@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { Send, CheckCircle2, Loader2, MessageCircle } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { useUTM } from '../hooks/useUTM';
-import { trackEvent } from '../lib/analytics';
+import { trackEvent, trackAdsConversion } from '../lib/analytics';
 
 export default function QuoteForm() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,6 +31,7 @@ export default function QuoteForm() {
                 project_type: data.projectType,
                 location: data.location
             });
+            trackAdsConversion();
 
             setIsSubmitting(false);
             setIsSuccess(true);
